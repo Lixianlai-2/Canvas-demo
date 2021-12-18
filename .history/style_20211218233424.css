@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-#canvass {
+#canvas {
   border: 1px solid blue;
-  height: 100vh;
+  height: 100px;
 }
