@@ -4,9 +4,7 @@ canvass.onclick = (e) => {
   console.log(e.clientY);
 
   let div = document.createElement("div");
-  // 如果不在canvass里添加div，那么这个div是添加在内存里
-  canvass.appendChild(div);
-  // ----------------------------------
+  // ---------------------
   // 制作圆点样式
   div.style.border = "1px solid red";
   div.style.height = "20px";
@@ -24,5 +22,6 @@ canvass.onclick = (e) => {
   div.style.marginTop = "-10px";
   div.style.marginLeft = "-10px";
 
-  // -------------------------------------
+  // 如果不在canvass里添加div，那么这个div是添加在内存里
+  canvass.appendChild(div);
 };
