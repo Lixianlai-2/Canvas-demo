@@ -16,7 +16,6 @@ canvas.onmouseup = () => {
 };
 
 canvas.onmousemove = (e) => {
-  // 注意不是=，这是赋值
   if (painting === true) {
     // 画颜色
     ctx.fillStyle = "rgb(200,0,0)";

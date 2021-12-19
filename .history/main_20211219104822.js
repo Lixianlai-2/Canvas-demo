@@ -7,23 +7,20 @@ console.log(screen);
 let ctx = canvas.getContext("2d");
 
 let painting = false;
-canvas.onmousedown = () => {
-  painting = true;
-};
+canvas.onmousedown = () {
+   painting = true;
+}
 
-canvas.onmouseup = () => {
-  painting = false;
-};
+
 
 canvas.onmousemove = (e) => {
-  // 注意不是=，这是赋值
-  if (painting === true) {
-    // 画颜色
-    ctx.fillStyle = "rgb(200,0,0)";
-    // x坐标，y坐标，长宽
-    ctx.fillRect(e.clientX - 5, e.clientY - 5, 10, 10);
-  } else {
-  }
+
+
+
+  // 画颜色
+  ctx.fillStyle = "rgb(200,0,0)";
+  // x坐标，y坐标，长宽
+  ctx.fillRect(e.clientX - 5, e.clientY - 5, 10, 10);
 };
 
 // 画圆形
