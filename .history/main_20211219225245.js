@@ -14,14 +14,8 @@ const drawLine = function (x1, y1, x2, y2) {
   ctx.beginPath();
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
-  ctx.lineCap = "round";
-  ctx.lineWidth = 4;
   ctx.stroke();
 };
-
-//测试模糊的边框
-drawLine(0, 0, 300, 300);
-drawLine(300, 300, 500, 100);
 
 // // ----------------------------------------------------
 // // 非手机端
@@ -70,12 +64,8 @@ function is_touch_enabled() {
 // 注意这里要用is_touch_enabled()，要执行这个函数
 if (is_touch_enabled() === true) {
   canvas.ontouchmove = (e) => {
-    drawLine(
-      lastMoveOrTouch[0],
-      lastMoveOrTouch[1],
-      e.touches[0].clientX,
-      e.touches[0].clientY
-    );
-    lastMoveOrTouch = [e.touches[0].clientX, e.touches[0].clientY];
+    lastMoveOrTouch = [0, 0];
+    console.log(e.touches[0].clientX);
+    drawLine(e.touches[0].clientX, e.touches[0].clientY);
   };
 }

@@ -15,13 +15,8 @@ const drawLine = function (x1, y1, x2, y2) {
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.lineCap = "round";
-  ctx.lineWidth = 4;
   ctx.stroke();
 };
-
-//测试模糊的边框
-drawLine(0, 0, 300, 300);
-drawLine(300, 300, 500, 100);
 
 // // ----------------------------------------------------
 // // 非手机端

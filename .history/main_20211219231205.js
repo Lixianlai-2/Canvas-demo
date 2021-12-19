@@ -19,7 +19,7 @@ const drawLine = function (x1, y1, x2, y2) {
   ctx.stroke();
 };
 
-//测试模糊的边框
+//
 drawLine(0, 0, 300, 300);
 drawLine(300, 300, 500, 100);
 
