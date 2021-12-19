@@ -13,7 +13,6 @@ ctx.fillStyle = "green";
 // --------------------------------------------
 // 手机端
 
-// 检测是否为手机端的函数，要判断的话需要执行它
 function is_touch_enabled() {
   return (
     "ontouchstart" in window ||
@@ -22,23 +21,15 @@ function is_touch_enabled() {
   );
 }
 
-// 注意这里要用is_touch_enabled()，要执行这个函数
-if (is_touch_enabled() === true) {
-  canvas.ontouchmove = (e) => {
-    console.log(e);
-    ctx.fill();
-    ctx.beginPath();
-    ctx.arc(
-      e.touches[0].clientX,
-      e.touches[0].clientY,
-      5,
-      0,
-      Math.PI * 2,
-      true
-    ); // 绘制
-    ctx.stroke();
-  };
+console.log(is_touch_enabled());
+
+if (is_touch_enabled === true) {
 }
+
+canvas.ontouchmove = (e) => {
+  console.log(e.touches[0].clientX);
+  console.log(e.touches[0].clientY);
+};
 
 // ----------------------------------------------------
 // 非手机端
@@ -58,6 +49,7 @@ canvas.onmousemove = (e) => {
   // 注意不是=，这是赋值
   if (painting === true) {
     // 画颜色
+
     ctx.fill();
     ctx.beginPath();
     ctx.arc(e.clientX, e.clientY, 5, 0, Math.PI * 2, true); // 绘制
