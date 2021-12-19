@@ -8,7 +8,7 @@ var ctx = canvas.getContext("2d");
 // 画颜色
 ctx.fillStyle = "rgb(200,0,0)";
 
-canvas.onmousemove = (e) => {
+canvas.mousedown = (e) => {
   console.log(e);
 
   // x坐标，y坐标，长宽

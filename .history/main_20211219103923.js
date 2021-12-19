@@ -5,6 +5,7 @@ canvas.width = document.documentElement.clientWidth;
 console.log(screen);
 
 var ctx = canvas.getContext("2d");
+
 // 画颜色
 ctx.fillStyle = "rgb(200,0,0)";
 
