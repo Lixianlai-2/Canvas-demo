@@ -10,21 +10,16 @@ let ctx = canvas.getContext("2d");
 ctx.strokeStyle = "green";
 ctx.fillStyle = "green";
 
-//如果不用beginPath()，页面会被拖动
 ctx.beginPath();
 // 起点位置
-ctx.moveTo(10, 20);
+ctx.moveTo(0, 0);
 
 // 终点位置
-ctx.lineTo(100, 130);
+ctx.lineTo(100, 854);
 
 // 第三个点的位置
-ctx.lineTo(400, 240);
-
-//将最后一个点和第一个点连接起来
+ctx.lineTo(45, 125);
 ctx.closePath();
-
-// 画线
 ctx.stroke();
 
 // --------------------------------------------

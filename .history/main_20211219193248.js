@@ -10,7 +10,7 @@ let ctx = canvas.getContext("2d");
 ctx.strokeStyle = "green";
 ctx.fillStyle = "green";
 
-//如果不用beginPath()，页面会被拖动
+// 不用beginPath()也可以
 ctx.beginPath();
 // 起点位置
 ctx.moveTo(10, 20);
