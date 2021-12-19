@@ -27,14 +27,15 @@ let lastMoveOrTouch;
 // 设置判断条件，当鼠标按下时
 
 canvas.onmousedown = (e) => {
+  drawLine(0, 0, e.clientX, e.clientY);
   painting = true;
   lastMoveOrTouch = [e.clientX, e.clientY];
 };
 
-// 当鼠标松开时
-canvas.onmouseup = () => {
-  painting = false;
-};
+// // 当鼠标松开时
+// canvas.onmouseup = () => {
+//   painting = false;
+// };
 
 canvas.onmousemove = (e) => {
   if (painting === true) {
@@ -44,21 +45,31 @@ canvas.onmousemove = (e) => {
 };
 
 // // --------------------------------------------
-// 手机端
+// // 手机端
 
-// 检测是否为手机端的函数，要判断的话需要执行它
-function is_touch_enabled() {
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-}
+// // 检测是否为手机端的函数，要判断的话需要执行它
+// function is_touch_enabled() {
+//   return (
+//     "ontouchstart" in window ||
+//     navigator.maxTouchPoints > 0 ||
+//     navigator.msMaxTouchPoints > 0
+//   );
+// }
 
-// 注意这里要用is_touch_enabled()，要执行这个函数
-if (is_touch_enabled() === true) {
-  canvas.ontouchmove = (e) => {
-    drawLine(e.touches[0].clientX, e.touches[0].clientY);
-    lastMoveOrTouch = [e.touches[0].clientX, e.touches[0].clientY];
-  };
-}
+// // 注意这里要用is_touch_enabled()，要执行这个函数
+// if (is_touch_enabled() === true) {
+//   canvas.ontouchmove = (e) => {
+//     console.log(e);
+//     ctx.fill();
+//     ctx.beginPath();
+//     ctx.arc(
+//       e.touches[0].clientX,
+//       e.touches[0].clientY,
+//       5,
+//       0,
+//       Math.PI * 2,
+//       true
+//     ); // 绘制
+//     ctx.stroke();
+//   };
+// }

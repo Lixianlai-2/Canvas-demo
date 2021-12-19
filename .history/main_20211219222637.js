@@ -58,7 +58,6 @@ function is_touch_enabled() {
 // 注意这里要用is_touch_enabled()，要执行这个函数
 if (is_touch_enabled() === true) {
   canvas.ontouchmove = (e) => {
-    drawLine(e.touches[0].clientX, e.touches[0].clientY);
-    lastMoveOrTouch = [e.touches[0].clientX, e.touches[0].clientY];
+    lastMoveOrTouch = [e.touches[0].clientX, e.touches[0].clientXclientY];
   };
 }

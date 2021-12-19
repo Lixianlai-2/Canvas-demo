@@ -10,25 +10,28 @@ let ctx = canvas.getContext("2d");
 ctx.strokeStyle = "green";
 ctx.fillStyle = "green";
 
-const drawLine = function (x1, y1, x2, y2) {
+function drawLine(x1, y1, x2, y2) {
   ctx.beginPath();
   ctx.moveTo(x1, y1);
-  ctx.lineTo(x2, y2);
+  ctx.moveTo(x2, y2);
   ctx.stroke();
-};
+}
 
-// // ----------------------------------------------------
-// // 非手机端
+// ----------------------------------------------------
+// 非手机端
 
-// let painting = false;
+let painting = false;
 
 let lastMoveOrTouch;
 
 // 设置判断条件，当鼠标按下时
-
 canvas.onmousedown = (e) => {
+  drawLine(0, 0, e.clientX, e.clientY);
+  // ctx.beginPath();
+  // ctx.moveTo(0, 0);
+  // ctx.moveTo(e.clientX, e.clientY);
+  // // lastMoveOrTouch = [e.clientX, e.clientY];
   painting = true;
-  lastMoveOrTouch = [e.clientX, e.clientY];
 };
 
 // 当鼠标松开时
@@ -37,13 +40,17 @@ canvas.onmouseup = () => {
 };
 
 canvas.onmousemove = (e) => {
+  // 注意不是=，这是赋值
   if (painting === true) {
-    drawLine(lastMoveOrTouch[0], lastMoveOrTouch[1], e.clientX, e.clientY);
-    lastMoveOrTouch = [e.clientX, e.clientY];
+    // 画颜色
+    // ctx.fill();
+    // ctx.beginPath();
+    // ctx.arc(e.clientX, e.clientY, 5, 0, Math.PI * 2, true); // 绘制
+    // ctx.stroke();
   }
 };
 
-// // --------------------------------------------
+// --------------------------------------------
 // 手机端
 
 // 检测是否为手机端的函数，要判断的话需要执行它
@@ -58,7 +65,17 @@ function is_touch_enabled() {
 // 注意这里要用is_touch_enabled()，要执行这个函数
 if (is_touch_enabled() === true) {
   canvas.ontouchmove = (e) => {
-    drawLine(e.touches[0].clientX, e.touches[0].clientY);
-    lastMoveOrTouch = [e.touches[0].clientX, e.touches[0].clientY];
+    console.log(e);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(
+      e.touches[0].clientX,
+      e.touches[0].clientY,
+      5,
+      0,
+      Math.PI * 2,
+      true
+    ); // 绘制
+    ctx.stroke();
   };
 }
