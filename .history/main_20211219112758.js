@@ -17,8 +17,7 @@ canvas.onmouseup = () => {
   painting = false;
 };
 
-// 让填充色和边框色都变成同一个
-ctx.strokeStyle = "green";
+ctx.strokeStyle = "none";
 ctx.fillStyle = "green";
 
 canvas.onmousemove = (e) => {
