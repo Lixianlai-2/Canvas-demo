@@ -11,7 +11,7 @@ ctx.strokeStyle = "green";
 ctx.fillStyle = "green";
 
 const drawLine = function (x1, y1, x2, y2) {
-  ctx.beginPath();
+  // ctx.beginPath();
   ctx.moveTo(x1, y1);
   ctx.lineTo(x2, y2);
   ctx.lineCap = "round";
@@ -26,7 +26,7 @@ const drawLine = function (x1, y1, x2, y2) {
 // // ----------------------------------------------------
 // // 非手机端
 
-let painting = false;
+// let painting = false;
 
 let lastMoveOrTouch;
 

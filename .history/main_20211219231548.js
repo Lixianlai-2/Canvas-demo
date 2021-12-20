@@ -26,7 +26,7 @@ const drawLine = function (x1, y1, x2, y2) {
 // // ----------------------------------------------------
 // // 非手机端
 
-let painting = false;
+// let painting = false;
 
 let lastMoveOrTouch;
 
