@@ -79,3 +79,5 @@
 //     lastMoveOrTouch = [e.touches[0].clientX, e.touches[0].clientY];
 //   };
 // }
+
+// var isTouchDevice = "ontouchstart" in document.documentElement;

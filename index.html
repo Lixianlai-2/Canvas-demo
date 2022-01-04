@@ -89,16 +89,18 @@
       };
 
       // 检测是否为手机端的函数，要判断的话需要执行它
-      function is_touch_enabled() {
-        return (
-          "ontouchstart" in window ||
-          navigator.maxTouchPoints > 0 ||
-          navigator.msMaxTouchPoints > 0
-        );
-      }
+      // function is_touch_enabled() {
+      //   return (
+      //     "ontouchstart" in window ||
+      //     navigator.maxTouchPoints > 0 ||
+      //     navigator.msMaxTouchPoints > 0
+      //   );
+      // }
+      var isTouchDevice = "ontouchstart" in document.documentElement;
+      console.log(isTouchDevice);
 
       // 注意这里要用is_touch_enabled()，要执行这个函数
-      if (is_touch_enabled() === true) {
+      if (isTouchDevice) {
         canvas.ontouchmove = (e) => {
           drawLine(
             lastMoveOrTouch[0],
